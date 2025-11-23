@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: DoSomething
+      run: |
+        df -h
+
+  slim:
+    runs-on: ubuntu-slim
+    steps:
+    - uses: actions/checkout@v4
+    - name: DoSomething
+      run: |
+        df -h
